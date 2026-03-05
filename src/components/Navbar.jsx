@@ -10,16 +10,21 @@ const Navbar = () => {
     { label: 'Tech Stack', id: 'tech-stack' },
     { label: 'Projects', id: 'projects' },
     { label: 'Experience', id: 'experience' },
+    { label: 'Education', id: 'education' },
     { label: 'Research', id: 'research' },
     { label: 'Contact', id: 'contact' },
   ]
 
   const handleScroll = (id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsOpen(false)
-    }
+    setIsOpen(false)
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (!element) return
+      const navbarHeight = 72
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+    }, 50)
   }
 
   return (

@@ -6,7 +6,9 @@ const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const navbarHeight = 72
+      const top = element.getBoundingClientRect().top + window.scrollY - navbarHeight
+      window.scrollTo({ top, behavior: 'smooth' })
     }
   }
 
