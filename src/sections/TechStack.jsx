@@ -9,17 +9,17 @@ const TechStack = () => {
     {
       category: 'Frontend',
       icon: Code,
-      techs: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Framer Motion'],
+      techs: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'MUI (Material UI)', 'Redux', 'Zustand'],
     },
     {
       category: 'Backend & APIs',
       icon: Zap,
-      techs: ['Node.js', 'REST APIs', 'GraphQL', 'Python', 'Express'],
+      techs: ['Node.js', 'Java','Python','REST APIs', 'GraphQL API'],
     },
     {
       category: 'Database',
       icon: Database,
-      techs: ['MySQL', 'MongoDB', 'Firebase', 'PostgreSQL'],
+      techs: ['MySQL', 'MongoDB', 'Firebase'],
     },
     {
       category: 'Tools & Version Control',
@@ -145,8 +145,8 @@ const TechStack = () => {
         >
           <h4 className="text-xl font-bold text-white mb-8 text-center">Technologies</h4>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['React', 'TypeScript', 'JavaScript', 'Tailwind', 'Node.js', 'Python', 'MySQL', 'Git'].map(
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            {['React', 'TypeScript', 'JavaScript', 'Tailwind', 'MUI', 'Redux', 'Zustand', 'Node.js', 'Java', 'GraphQL', 'Python', 'MySQL', 'Git', 'GitHub'].map(
               (tech, index) => (
                 <motion.div
                   key={tech}

@@ -7,19 +7,19 @@ const Footer = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/Yasmiwijethunga',
       color: 'hover:text-white',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/yasmi-wijethunga-731a03265/',
       color: 'hover:text-blue-400',
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:contact@example.com',
+      href: 'mailto:yasmiwijethunga@gmail.com',
       color: 'hover:text-primary-600',
     },
   ]

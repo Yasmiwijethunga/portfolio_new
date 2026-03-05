@@ -1,39 +1,42 @@
-import { motion } from 'framer-motion'
-import { Briefcase, Calendar, Award } from 'lucide-react'
-import useScrollAnimation from '../hooks/useScrollAnimation'
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, Award } from "lucide-react";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const Experience = () => {
-  const { ref, isVisible } = useScrollAnimation()
+  const { ref, isVisible } = useScrollAnimation();
 
   const experiences = [
+    // {
+    //   title: "Associate Software Engineer",
+    //   company: "Tech Company Name",
+    //   duration: "Jan 2024 - Present",
+    //   description: [
+    //     "Developed and maintained scalable frontend applications using React and TypeScript",
+    //     "Built reusable UI components following best practices and design patterns",
+    //     "Integrated REST and GraphQL APIs with efficient state management using Redux and Zustand",
+    //     "Improved application performance through code optimization and lazy loading techniques",
+    //     "Collaborated with cross-functional teams in Agile sprint cycles",
+    //     "Participated in code reviews and mentored junior developers",
+    //   ],
+    //   icon: Briefcase,
+    // },
     {
-      title: 'Associate Software Engineer',
-      company: 'Tech Company Name',
-      duration: 'Jan 2024 - Present',
+      title: "Software Engineer Intern",
+      company: "ZData Innovations (Pvt) Ltd",
+      duration: "Jul 2025 - Feb 2026",
       description: [
-        'Developed and maintained scalable frontend applications using React and TypeScript',
-        'Built reusable UI components following best practices and design patterns',
-        'Integrated REST and GraphQL APIs with efficient state management using Redux and Zustand',
-        'Improved application performance through code optimization and lazy loading techniques',
-        'Collaborated with cross-functional teams in Agile sprint cycles',
-        'Participated in code reviews and mentored junior developers',
-      ],
-      icon: Briefcase,
-    },
-    {
-      title: 'Frontend Intern',
-      company: 'Startup Company',
-      duration: 'Jul 2023 - Dec 2023',
-      description: [
-        'Assisted in developing user interfaces for web applications',
-        'Converted design mockups to responsive React components',
-        'Worked with CSS and Tailwind CSS for styling',
-        'Debugged and resolved frontend issues and bugs',
-        'Participated in daily stand-ups and sprint planning',
+        "Developed and enhanced FinTech web applications using React, JavaScript and TypeScript",
+        "Built reusable UI components to improve maintainability and scalability",
+        "Integrated REST APIs and GraphQL APIs for real-time data handling",
+        "Implemented efficient state management using Redux and Zustand to maintain scalable and predictable application behavior.",
+
+        "Optimized UI performance and improved user experience across multiple product modules",
+        "Collaborated with backend developers and QA teams to deliver high-quality releases",
+        "Followed Agile development practices and participated in sprint planning and reviews",
       ],
       icon: Award,
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,7 +46,7 @@ const Experience = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -30 },
@@ -52,10 +55,13 @@ const Experience = () => {
       x: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
-    <section id="experience" className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="experience"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -78,10 +84,10 @@ const Experience = () => {
           className="space-y-8"
           variants={containerVariants}
           initial="hidden"
-          animate={isVisible ? 'visible' : 'hidden'}
+          animate={isVisible ? "visible" : "hidden"}
         >
           {experiences.map((exp, index) => {
-            const IconComponent = exp.icon
+            const IconComponent = exp.icon;
             return (
               <motion.div
                 key={exp.title}
@@ -139,7 +145,9 @@ const Experience = () => {
                           animate={isVisible ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: idx * 0.05 }}
                         >
-                          <span className="text-primary-600 font-bold mt-1">•</span>
+                          <span className="text-primary-600 font-bold mt-1">
+                            •
+                          </span>
                           <span>{point}</span>
                         </motion.li>
                       ))}
@@ -147,7 +155,7 @@ const Experience = () => {
                   </motion.div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
       </div>
@@ -161,7 +169,7 @@ const Experience = () => {
         transition={{ duration: 8, repeat: Infinity }}
       />
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

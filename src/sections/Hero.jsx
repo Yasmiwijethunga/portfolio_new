@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Download, ArrowRight } from 'lucide-react'
-import Background3D from '../components/Background3D'
+import VantaBackground from '../components/VantaBackground'
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -32,13 +32,11 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden flex items-center justify-center">
-      {/* 3D Background */}
-      <div className="absolute inset-0 z-0 opacity-30">
-        <Background3D />
-      </div>
+      {/* Vanta.js NET 3D Background */}
+      <VantaBackground />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900 z-10" />
+      {/* Gradient overlay — fades edges into page bg */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900/20 via-transparent to-dark-900 z-10 pointer-events-none" />
 
       {/* Content */}
       <motion.div
@@ -49,8 +47,8 @@ const Hero = () => {
       >
         {/* Greeting */}
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-block text-primary-600 font-semibold px-4 py-2 glass-sm rounded-full">
-            👋 Welcome to my portfolio
+          <span className="inline-block text-primary-800 font-semibold px-4 py-2 glass-sm rounded-full">
+             Welcome to my portfolio
           </span>
         </motion.div>
 
@@ -59,7 +57,8 @@ const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
         >
-          Hi, I'm <span className="gradient-text">YASMI SANJULEE</span>
+          Hi, I'm{' '}
+          <span className="gradient-text">YASMI SANJULEE</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -75,8 +74,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Passionate about building scalable web applications with React and modern technologies.
-          Specialized in frontend development, API integration, and creating exceptional user experiences.
+         Associate Software Engineer with hands-on industry experience developing scalable, high-performance web applications using React and modern technologies, focused on clean architecture and seamless user experiences.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -86,7 +84,8 @@ const Hero = () => {
         >
           {/* Download CV Button */}
           <motion.a
-            href="#contact"
+            href="/Yasmi%20Wijethunga_Resume.pdf"
+            download="Yasmi_Wijethunga_Resume.pdf"
             className="glass px-8 py-4 rounded-lg font-semibold text-white flex items-center justify-center gap-2 group hover:bg-primary-600/30 w-full sm:w-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

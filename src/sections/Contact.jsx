@@ -18,19 +18,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'yasmiwijethunga@gmail.com',
+      href: 'mailto:yasmiwijethunga@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+94 762734315',
+      href: 'tel:+94762734315',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'City, Country',
+      value: 'Malabe, Sri Lanka',
       href: '#',
     },
   ]
@@ -161,15 +161,20 @@ const Contact = () => {
             <motion.div variants={itemVariants} className="pt-8 border-t border-primary-600/20">
               <h4 className="text-lg font-semibold text-white mb-4">Follow me</h4>
               <div className="flex gap-4">
-                {['GitHub', 'LinkedIn', 'Twitter'].map((social) => (
+                {[
+                  { label: 'GitHub', href: 'https://github.com/Yasmiwijethunga' },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yasmi-wijethunga-731a03265/' },
+                ].map((social) => (
                   <motion.a
-                    key={social}
-                    href="#"
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="glass px-4 py-2 rounded-lg text-sm text-white hover:bg-primary-600/30"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {social}
+                    {social.label}
                   </motion.a>
                 ))}
               </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Zap, Database, BarChart3 } from 'lucide-react'
+import { GraduationCap, Zap, Database, BarChart3, BookOpen, FlaskConical, Brain, Siren } from 'lucide-react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const Research = () => {
@@ -55,13 +55,13 @@ const Research = () => {
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <GraduationCap className="w-8 h-8 text-primary-600" />
-            <span className="text-primary-600 font-semibold">Research & Projects</span>
+            <span className="text-primary-600 font-semibold">Research & Publications</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Paddy Price <span className="gradient-text">Prediction System</span>
+            Research <span className="gradient-text">&amp; Publications</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Final Year Project: AI/ML-driven agricultural solution
+            Final Year Project, peer-reviewed abstracts &amp; published symposium papers
           </p>
         </motion.div>
 
@@ -78,8 +78,8 @@ const Research = () => {
               <h3 className="text-2xl font-bold text-white">Project Overview</h3>
               <p className="text-gray-300 leading-relaxed">
                 A comprehensive machine learning system designed to predict paddy (rice) prices
-                using historical market data, weather patterns, and agricultural trends. This
-                project combines AI/ML backend with a modern React frontend to help farmers
+                for Anuradhapura District using historical production data,consumption data,weather patterns, and agricultural trends. This
+                project combines AI/ML backend with a modern React frontend to help farmers & researchers
                 make informed decisions.
               </p>
             </motion.div>
@@ -92,7 +92,7 @@ const Research = () => {
                   'Machine Learning',
                   'React (Frontend)',
                   'Django/Flask API',
-                  'PostgreSQL',
+                  'MySQL',
                   'TensorFlow/Scikit-learn',
                 ].map((tech) => (
                   <motion.div
@@ -182,6 +182,97 @@ const Research = () => {
               <div className="text-4xl font-bold text-primary-600 mb-2">24/7</div>
               <p className="text-gray-300">Real-time Updates</p>
             </div>
+          </div>
+        </motion.div>
+
+        {/* ── Published Abstracts ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.55 }}
+          className="mt-20"
+        >
+          <div className="flex items-center gap-3 mb-8">
+            <BookOpen className="w-6 h-6 text-primary-600" />
+            <h3 className="text-2xl font-bold text-white">Published Abstracts</h3>
+          </div>
+
+          <div className="space-y-5">
+            {[
+              {
+                icon: FlaskConical,
+                title: 'AI-driven Fake Currency Detection: A New Frontier in Currency Security',
+                venue: '4th CINEC International Research Symposium',
+                tags: ['AI', 'Machine Learning','CNN', 'Computer Vision', 'Security','Counterfeit Detection','Spectrum Analysis'],
+                color: 'from-primary-600/20 to-blue-600/10',
+              },
+              {
+                icon: Siren,
+                title: 'Optimizing Emergency Response: AI Solutions for Faster Ambulance Dispatch and Hospital Readiness',
+                venue: '5th CINEC International Research Symposium',
+                tags: ['AI', 'Healthcare', 'Optimization', 'Real-time Systems','Emergency Response','Predictive Analytics'],
+                color: 'from-cyan-600/20 to-primary-600/10',
+              },
+              {
+                icon: Brain,
+                title: 'Enhancing Human-Computer Interaction with Deep Learning-Based Emotion Recognition System',
+                venue: '5th CINEC International Research Symposium',
+                tags: ['Deep Learning', 'HCI', 'Emotion AI', 'Computer Vision','Multimodal Analysis','User Experience','CNN'],
+                color: 'from-indigo-600/20 to-primary-600/10',
+              },
+            ].map((pub, i) => {
+              const Icon = pub.icon
+              return (
+                <motion.div
+                  key={i}
+                  className="glass rounded-2xl p-6 group relative overflow-hidden"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: 0.6 + i * 0.12 }}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                >
+                  {/* hover tint */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r ${pub.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}
+                  />
+
+                  <div className="relative z-10 flex gap-5 items-start">
+                    {/* Icon badge */}
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-600/20 border border-primary-600/30 flex items-center justify-center group-hover:bg-primary-600/30 transition-colors">
+                      <Icon className="w-5 h-5 text-primary-400" />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white font-semibold leading-snug mb-2 group-hover:text-primary-200 transition-colors">
+                        {pub.title}
+                      </p>
+
+                      <div className="flex items-center gap-2 mb-3">
+                        <GraduationCap className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                        <span className="text-sm text-primary-400 font-medium">{pub.venue}</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {pub.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2.5 py-1 rounded-full bg-primary-600/15 text-primary-300 border border-primary-600/25"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Published label */}
+                    <div className="flex-shrink-0 hidden sm:flex items-center gap-1.5 text-xs text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1.5 rounded-full">
+                      <span className="w-1.5 h-1.5 bg-green-400 rounded-full inline-block" />
+                      Published
+                    </div>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </motion.div>
       </div>

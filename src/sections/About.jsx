@@ -64,7 +64,7 @@ const About = () => {
               className="text-gray-300 text-lg leading-relaxed"
             >
               I'm a passionate Associate Software Engineer with 1+ year of hands-on experience
-              in frontend development. I specialize in building scalable, performant web applications
+              in Software development. I specialize in building scalable, performant web applications
               using modern technologies and best practices.
             </motion.p>
 

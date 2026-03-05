@@ -19,5 +19,6 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['framer-motion', 'three', '@react-three/fiber', '@react-three/drei'],
+    exclude: ['vanta'],
   },
 })
