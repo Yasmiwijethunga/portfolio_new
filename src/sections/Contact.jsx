@@ -93,7 +93,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="contact" className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-16">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <motion.div

@@ -5,11 +5,11 @@ import About from './sections/About'
 import TechStack from './sections/TechStack'
 import Projects from './sections/Projects'
 import Experience from './sections/Experience'
+import Education from './sections/Education'
 import Research from './sections/Research'
 import Contact from './sections/Contact'
 import Footer from './components/Footer'
 import LoadingAnimation from './components/LoadingAnimation'
-import CursorEffect from './components/CursorEffect'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -26,8 +26,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900">
-      {/* Global cursor effects – desktop only */}
-      <CursorEffect />
       <Navbar />
       <main>
         <Hero />
@@ -35,6 +33,7 @@ function App() {
         <TechStack />
         <Projects />
         <Experience />
+        <Education />
         <Research />
         <Contact />
       </main>

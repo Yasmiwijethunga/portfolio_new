@@ -60,7 +60,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-16"
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
